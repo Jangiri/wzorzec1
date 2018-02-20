@@ -1,1 +1,41 @@
-wzorzec11111
+package BoxProwadzacy;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+ * Created by x on 2018-02-20 at 19:12
+ */
+public class BoxGenerator {
+
+
+    // kontener na obiekty boxow ktore jeszcze nie istnialy
+    ArrayList<Box> listaPudelek = new ArrayList<>();
+
+    int licznikStworzonych = 0;
+
+
+    public void startGenerate() {
+        Random random = new Random();
+        for (int i = 0; i < 100000; i++) {
+            int dlugosc = 5;
+            int szerokosc = random.nextInt(6) + 5;
+            int wysokosc;
+            if (random.nextInt(2) == 0) {
+                wysokosc = 2;
+            } else {
+                wysokosc = 5;
+            }
+            if (getBox(wysokosc, szerokosc, dlugosc) == null) {
+                listaPudelek.add(new Box(wysokosc, szerokosc, dlugosc));
+                licznikStworzonych++;
+            }
+        }
+        System.out.println(licznikStworzonych);
+
+
+        Box box = new Box
+
+    }
+}
+}
